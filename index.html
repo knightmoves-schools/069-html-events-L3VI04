@@ -1,14 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Squaring Calculator</title>
+  <meta charset="UTF-8">
+  <title>Squaring Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    input, button {
+      margin: 5px 0;
+    }
+    #result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-    <h2>Squaring Calculator</h2>
-    <input id="number" placeholder="Enter a Number">
-    <button id="calculate">Calculate</button>
-    <div id="result">Replace Me</div>
-    
-    <script src="index.js"></script>
+  <h2>Squaring Calculator</h2>
+  
+  <!-- Input field -->
+  <input id="number" placeholder="Enter a Number">
+  
+  <!-- Button -->
+  <button id="calculate">Calculate</button>
+  
+  <!-- Result display -->
+  <div id="result">Replace Me</div>
+  
+  <script>
+    document.getElementById("calculate").addEventListener("click", function() {
+      const input = document.getElementById("number").value;
+      const num = Number(input);
+      const resultDiv = document.getElementById("result");
+
+      if (isNaN(num)) {
+        resultDiv.textContent = "Invalid, please enter a number";
+      } else {
+        resultDiv.textContent = `Result: ${num * num}`;
+      }
+    });
+  </script>
 </body>
 </html>
